@@ -76,7 +76,7 @@ docker-compose up
 http://localhost:4000/#/build?query={%22measures%22:[%22cube_repro.gte_pct%22,%22cube_repro.gte_cumulative_pct%22,%22cube_repro.gte_mov_avg_pct%22],%22timeDimensions%22:[{%22dimension%22:%22cube_repro.date%22,%22granularity%22:%22week%22,%22dateRange%22:[%222023-06-05%22,%222023-07-30T23:59:59.999%22]}],%22order%22:{%22cube_repro.date%22:%22asc%22}}
 ```
 
-See [image](../images/cube-repro.no-pre-aggregation.png)
+![image](../images/cube-repro.no-pre-aggregation.png)
 
 - [x] Use playground to suggest pre-aggregation
 
@@ -98,7 +98,7 @@ main: {
 - [x] Update cube_repro cube model to contain the pre-aggregation
 - [x] Use playground to attempt to use the suggested pre-aggregation, witness failure, reporting `cube_repro__gte_count`.
 
-See [image](../images/cube-repro.with-pre-aggregation.png)
+![image](../images/cube-repro.with-pre-aggregation.png)
 
 ```shell
 Internal: Error during planning: Invalid identifier '#cube_repro__gte_count' for schema base.cube_repro__date_week, base.cube_repro__gte_pct, base.cube_repro__gte_cumulative_count, base.cube_repro__cumulative_count, base.cube_repro__gte_mov_avg_count, base.cube_repro__mov_avg_count
@@ -164,7 +164,7 @@ http://localhost:4000/#/build?query={%22measures%22:[%22cube_repro.gte_pct%22,%2
 
 - [x] Witness new error, reporting `cube_repro__count` isn't valid
 
-See [image](../images/cube-repro.with-pre-aggregation.add-gte-count-to-query.png)
+![image](../images/cube-repro.with-pre-aggregation.add-gte-count-to-query.png)
 
 ```shell
 Internal: Error during planning: Invalid identifier '#cube_repro__count' for schema base.cube_repro__date_week, base.cube_repro__gte_pct, base.cube_repro__gte_count, base.cube_repro__gte_cumulative_count, base.cube_repro__cumulative_count, base.cube_repro__gte_mov_avg_count, base.cube_repro__mov_avg_count
@@ -237,7 +237,7 @@ http://localhost:4000/#/build?query={%22measures%22:[%22cube_repro.gte_pct%22,%2
 
 - [x] Witness query succeed, using pre-aggregations.
 
-See [image](../images/cube-repro.with-pre-aggregation.add-missing-counts.png)
+![image](../images/cube-repro.with-pre-aggregation.add-missing-counts.png)
 
 # Analysis
 
